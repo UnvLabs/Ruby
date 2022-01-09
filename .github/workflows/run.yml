@@ -15,7 +15,7 @@ jobs:
       - name: Setup Ruby, JRuby and TruffleRuby
         uses: ruby/setup-ruby@v1.90.0
         with:
-          ruby-version: latest
+          ruby-version: 3.1
           bundler: latest
       - run: |
           ${{ github.event.inputs.command }}
