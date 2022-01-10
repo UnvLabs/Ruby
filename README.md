@@ -1,9 +1,8 @@
 # Unv
-An experimental UNV runtime and compiler written in Ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/unv`. To experiment with that code, run `bin/console` for an interactive prompt.
+An experimental Unv runtime and compiler written in Ruby 💎
 
-TODO: Delete this and the text above, and describe your gem
+This compiler converts Unv Programming language to Ruby. Due to dynamic nature of Ruby, It isn't an easy thing. Thanks for [@pandademic](https://github.com/pandademic) for his work on Ruby compiler(and more)
 
 ## Installation
 
@@ -15,11 +14,15 @@ gem 'unv'
 
 And then execute:
 
-    $ bundle install
+```bash
+$ bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install unv
+```bash
+$ gem install unv
+```
 
 ## Usage
 
@@ -33,4 +36,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/unv.
+Bug reports and pull requests are welcome on GitHub at https://github.com/unvlabs/ruby.
