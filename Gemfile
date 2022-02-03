@@ -2,11 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in unv.gemspec
-gemspec
+# Specify your dependencies
+#
 
-gem "rake", "~> 13.0"
-
-gem "rspec", "~> 3.0"
-
-gem "rubocop", "~> 1.7"
+gem 'parslet'
