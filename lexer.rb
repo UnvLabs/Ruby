@@ -1,6 +1,6 @@
 require 'forwardable'  
 class Token
-    extend Forwardable
+    #extend Forwardable
 
     attr_reader :type, :lexeme, :literal, :location
     def_delegators :@location, :line, :col, :length
