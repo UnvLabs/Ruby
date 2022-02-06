@@ -3,14 +3,12 @@ require 'fileutils'
 #
 $invoc = ARGV[0]
 
-$filename = ARGV[1]
+path = ARGV[1]
+source = File.read(path)
 
-file = File.open("#$filename")
-
-file_data = file.read
-
-# "user1\nuser2\nuser3\n"
 
 if $invoc == "c"
-		require "parser.rb"
+	require 'lexer'
+	lexer = Lexer.new(source)
+	require "parser"
 end
