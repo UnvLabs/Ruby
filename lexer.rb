@@ -1,4 +1,28 @@
-  class Lexer
+  class Token
+    extend Forwardable
+
+    attr_reader :type, :lexeme, :literal, :location
+    def_delegators :@location, :line, :col, :length
+
+    def initialize(type, lexeme, literal, location)
+      @type = type
+      @lexeme = lexeme
+      @literal = literal
+      @location = location
+    end
+
+    def to_s
+      "#{type} #{lexeme} #{literal}"
+    end
+
+    def ==(other)
+      type == other.type &&
+      lexeme == other.lexeme &&
+      literal == other.literal &&
+      location == other.location
+    end
+  end  
+class Lexer
     WHITESPACE = [' ', "\r", "\t"].freeze
     ONE_CHAR_LEX = ['(', ')', ':', ',', '.', '-', '+', '/', '*'].freeze
     ONE_OR_TWO_CHAR_LEX = ['!', '=', '>', '<'].freeze
@@ -57,7 +81,7 @@
       if token
         tokens << token
       else
-        raise("Unknown character #{c}")
+        raise("ERR 0 (Lexer::UnregonizedChar): Unknown character: #{c}")
       end
     end
 
@@ -105,7 +129,7 @@
         self.line += 1 if lookahead == "\n"
         consume
       end
-      raise 'Unterminated string error.' if source_completed?
+      raise 'ERR 1 (Lexer::UnterminatedStr) :Unterminated string error.' if source_completed?
 
       consume # consuming the closing '"'.
       lexeme = source[(lexeme_start_p)..(next_p - 1)]
