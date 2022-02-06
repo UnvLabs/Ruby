@@ -8,7 +8,7 @@ source = File.read(path)
 
 
 if $invoc == "c"
-	require 'lexer'
+	require_relative 'lexer'
 	lexer = Lexer.new(source)
 	require "parser"
 end
