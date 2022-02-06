@@ -1,4 +1,5 @@
-  class Token
+require 'forwardable'  
+class Token
     extend Forwardable
 
     attr_reader :type, :lexeme, :literal, :location
