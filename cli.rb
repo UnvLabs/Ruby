@@ -11,4 +11,4 @@ if $invoc == "c"
 	require_relative 'lexer'
 	lexer = Lexer.new(source)
 	require "parser"
-end
+else if $invoc == "r"
